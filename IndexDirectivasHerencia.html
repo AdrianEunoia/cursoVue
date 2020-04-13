@@ -12,19 +12,36 @@
     <script src="./Componentes/DirectivasFor.js"></script>
     <script src="./Componentes/DirectivasOn.js"></script>
     <script src="./Componentes/DirectivasVmodel.js"></script>
+    <script src="./Componentes/ComponentesSlot/buttonComp.js"></script>
+    <script src="./Componentes/DirectivasSlot.js"></script>
+    <script src="./Componentes/DirectivasPre.js"></script>
+    <script src="./Componentes/DirectivasOnce.js"></script>
     <script src="./Componentes/VueDirectives.js"></script>
-    
+
     <title>Curso de Vue.js</title>
 </head>
 <body>
     <div id="elementoBuscado">
         <hola-mundo></hola-mundo>
         <vue-directives></vue-directives>
+        <p v-cloak> {{ pruebaVcloak }} </p>
     </div>
 </body>
 </html>
 <script>
     let varVue = new Vue({
         el: '#elementoBuscado',
+        data () {
+            return{
+                pruebaVcloak: 'Pruebas con v-cloak'
+            }
+        }
     })
 </script>
+<!-- Elementos para explicar v-cloak -->
+<!-- V-cloak simplemente lo que hará es limitar mostrar el contenido hasta que vue esté completamente cargado -->
+<style>
+    [v-cloak] {
+        display: none;
+    }
+</style>
